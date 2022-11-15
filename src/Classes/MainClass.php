@@ -1,6 +1,6 @@
 <?php
 
-namespace Vitab\NsTask;
+namespace Vitab\NsTask\Classes;
 
 class MainClass
 {
@@ -41,7 +41,7 @@ class MainClass
 
     public function saveData(string $data, string $fileName): void
     {
-        $filePath = (__DIR__ . '/database/' . $fileName . '.json');
+        $filePath = (__DIR__ . '/../database/' . $fileName . '.json');
 
         file_put_contents($filePath, json_encode($data));
     }

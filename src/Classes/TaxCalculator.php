@@ -1,6 +1,6 @@
 <?php
 
-namespace Vitab\NsTask;
+namespace Vitab\NsTask\Classes;
 
 class TaxCalculator
 {

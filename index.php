@@ -1,6 +1,6 @@
 <?php
 
-use Vitab\NsTask\MainClass;
+use Vitab\NsTask\Classes\MainClass;
 
 require_once './vendor/autoload.php';
 

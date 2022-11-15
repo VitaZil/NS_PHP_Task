@@ -1,6 +1,6 @@
 <?php
 
-namespace Vitab\NsTask;
+namespace Vitab\NsTask\Classes;
 
 class OutputHandler
 {
@@ -18,7 +18,7 @@ class OutputHandler
 
     public function getData(string $fileName): int
     {
-        $filePath = (__DIR__ . '/database/' . $fileName . '.json');
+        $filePath = (__DIR__ . '/../database/' . $fileName . '.json');
 
         return (int) json_decode(file_get_contents($filePath));
     }
