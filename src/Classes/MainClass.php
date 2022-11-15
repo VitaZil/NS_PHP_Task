@@ -8,7 +8,7 @@ class MainClass
     {
         do {
             $input = new InputHandler();
-            var_dump($input->input());
+            $input->input();
 
             $command = readline('Choose command: ');
 
