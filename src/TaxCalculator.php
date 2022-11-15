@@ -6,7 +6,6 @@ class TaxCalculator
 {
     public function calculateTax(int $salary, int $taxExemption, int $additionalIncome): int
     {
-
         $tax = 0;
 
         $totalIncome = $salary + $additionalIncome - $taxExemption;

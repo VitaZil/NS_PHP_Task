@@ -14,5 +14,12 @@ class InputHandler
 
         return $commands;
     }
+
+    public function validateValue($value): bool
+    {
+        $trimValue = (int) trim($value);
+
+        return preg_match('/^\d{1,9}$/', $trimValue);
+    }
 }
 

@@ -15,8 +15,14 @@ do {
     $value = '';
 
     if ($command == 1 || $command == 2 || $command == 3) {
-        $value = readline('Input value: ');
+        do {
+            $value = readline('Input value: ');
+            echo !$input->validateValue($value) ? 'Value is not correct' . PHP_EOL : '';
+        } while (
+            $input->validateValue($value) == false
+        );
     }
+
     $main = new MainClass($command, $value);
     $main->main();
     if ($command == 4) {
@@ -25,5 +31,4 @@ do {
 } while (
     $command != 5
 );
-
 
