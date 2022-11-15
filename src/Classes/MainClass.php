@@ -29,11 +29,9 @@ class MainClass
                 '3' => $this->saveData($value, 'income'),
                 '4' => (new OutputHandler())->output(),
                 '5' => 'Quit',
+                default => var_dump('Command not exist'),
             };
 
-            if ($command == 4) {
-                echo 'Your taxes: ' . (new OutputHandler())->output() . PHP_EOL;
-            }
         } while (
             $command != 5
         );

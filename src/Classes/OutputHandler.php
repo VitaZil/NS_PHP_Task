@@ -4,7 +4,7 @@ namespace Vitab\NsTask\Classes;
 
 class OutputHandler
 {
-    public function output(): int
+    public function output(): void
     {
         $salary = $this->getData('salary');
         $tax_exemption = $this->getData('tax_exemption');
@@ -13,7 +13,7 @@ class OutputHandler
         $taxCalculator = new TaxCalculator();
         $tax = $taxCalculator->calculateTax($salary, $tax_exemption, $income);
 
-        return (int) $tax;
+        echo 'Your taxes: ' . $tax . PHP_EOL;
     }
 
     public function getData(string $fileName): int
