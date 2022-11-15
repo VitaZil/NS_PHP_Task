@@ -23,6 +23,7 @@ class MainClass
     public function saveData(string $data, string $fileName): void
     {
         $filePath = (__DIR__ . '/database/' . $fileName . '.json');
+
         file_put_contents($filePath, json_encode($data));
     }
 }
