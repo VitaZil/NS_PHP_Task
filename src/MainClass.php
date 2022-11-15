@@ -4,22 +4,25 @@ namespace Vitab\NsTask;
 
 class MainClass
 {
-    public function __construct(protected array $argv)
+    public function __construct(private string $command,
+                                private string $value)
     {
-        $this->command = $this->argv[1];
-        $this->salary = $argv[2];
-        $this->taxExemption = $argv[2];
-        $this->additionalIncome = $argv[2];
     }
 
     public function main(): void
     {
         match ($this->command) {
-            '1' => $this->salary,
-            '2' => $this->taxExemption,
-            '3' => $this->additionalIncome,
-            '4' => (new TaxCalculator())->calculateTax($this->salary, $this->taxExemption, $this->additionalIncome),
+            '1' => $this->saveData($this->value, 'salary'),
+            '2' => $this->saveData($this->value, 'tax_exemption'),
+            '3' => $this->saveData($this->value, 'income'),
+            '4' => (new OutputHandler())->output(),
             '5' => 'Quit',
         };
+    }
+
+    public function saveData(string $data, string $fileName): void
+    {
+        $filePath = (__DIR__ . '/database/' . $fileName . '.json');
+        file_put_contents($filePath, json_encode($data));
     }
 }

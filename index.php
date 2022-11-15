@@ -5,15 +5,18 @@ use Vitab\NsTask\MainClass;
 
 require_once './vendor/autoload.php';
 
-$main = new MainClass($argv);
-$main->main();
-
-$input = new InputHandler();
-var_dump($input->input());
-$input->validate($argv);
-
 do {
+    $input = new InputHandler();
+    var_dump($input->input());
+    $command = readline('Choose command: ');
+    if ($command == 1 || $command == 2 || $command == 3 ) {
+        $value = readline('Input value: ');
+    }
 
+    $main = new MainClass($command, isset($value));
+    $main->main();
 } while (
-    $argv[1] != 5
+    $command != 5
 );
+
+

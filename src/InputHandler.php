@@ -15,14 +15,6 @@ class InputHandler
         return $commands;
     }
 
-    public function validate(array $argv): void
-    {
-        $input = new InputHandler();
 
-        if ($argv[2] > 5) {
-            echo 'Incorrect value'. PHP_EOL;
-            var_dump($input->input());
-        }
-    }
 }
 
