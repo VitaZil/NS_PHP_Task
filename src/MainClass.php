@@ -4,20 +4,39 @@ namespace Vitab\NsTask;
 
 class MainClass
 {
-    public function __construct(private string $command,
-                                private string $value)
-    {
-    }
-
     public function main(): void
     {
-        match ($this->command) {
-            '1' => $this->saveData($this->value, 'salary'),
-            '2' => $this->saveData($this->value, 'tax_exemption'),
-            '3' => $this->saveData($this->value, 'income'),
-            '4' => (new OutputHandler())->output(),
-            '5' => 'Quit',
-        };
+        do {
+            $input = new InputHandler();
+            var_dump($input->input());
+
+            $command = readline('Choose command: ');
+
+            $value = '';
+
+            if ($command == 1 || $command == 2 || $command == 3) {
+                do {
+                    $value = readline('Input value: ');
+                    echo !$input->validateValue($value) ? 'Value is not correct' . PHP_EOL : '';
+                } while (
+                    $input->validateValue($value) == false
+                );
+            }
+
+            match ($command) {
+                '1' => $this->saveData($value, 'salary'),
+                '2' => $this->saveData($value, 'tax_exemption'),
+                '3' => $this->saveData($value, 'income'),
+                '4' => (new OutputHandler())->output(),
+                '5' => 'Quit',
+            };
+
+            if ($command == 4) {
+                echo 'Your taxes: ' . (new OutputHandler())->output() . PHP_EOL;
+            }
+        } while (
+            $command != 5
+        );
     }
 
     public function saveData(string $data, string $fileName): void

@@ -22,4 +22,3 @@ class InputHandler
         return preg_match('/^\d{1,9}$/', $trimValue);
     }
 }
-
