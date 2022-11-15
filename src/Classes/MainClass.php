@@ -31,10 +31,7 @@ class MainClass
                 '5' => 'Quit',
                 default => var_dump('Command not exist'),
             };
-
-        } while (
-            $command != 5
-        );
+        } while ($command != 5);
     }
 
     public function saveData(string $data, string $fileName): void
