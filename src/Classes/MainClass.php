@@ -46,9 +46,7 @@ class MainClass
 
     public function getData():array
     {
-        $data = json_decode(file_get_contents($this->filePath), true);
-
-        return $data;
+        return json_decode(file_get_contents($this->filePath), true);
     }
 
     public function changeValue(string $newValue, string $key): void
