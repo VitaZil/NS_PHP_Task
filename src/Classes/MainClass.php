@@ -4,6 +4,16 @@ namespace Vitab\NsTask\Classes;
 
 class MainClass
 {
+    private $data = [];
+    private string $filePath;
+
+    public function __construct(){
+
+        $this->filePath = (__DIR__ . '/../database/data.json');
+        $this->data = $this->getData();
+
+    }
+
     public function main(): void
     {
         do {
@@ -24,9 +34,9 @@ class MainClass
             }
 
             match ($command) {
-                '1' => $this->saveData($value, 'salary'),
-                '2' => $this->saveData($value, 'tax_exemption'),
-                '3' => $this->saveData($value, 'income'),
+                '1' => $this->changeValue($value, 'salary'),
+                '2' => $this->changeValue($value, 'tax_exemption'),
+                '3' => $this->changeValue($value, 'income'),
                 '4' => (new OutputHandler())->output(),
                 '5' => 'Quit',
                 default => var_dump('Command not exist'),
@@ -34,10 +44,22 @@ class MainClass
         } while ($command != 5);
     }
 
-    public function saveData(string $data, string $fileName): void
+    public function getData():array
     {
-        $filePath = (__DIR__ . '/../database/' . $fileName . '.json');
+        $data = json_decode(file_get_contents($this->filePath), true);
 
-        file_put_contents($filePath, json_encode($data));
+        return $data;
+    }
+
+    public function changeValue(string $newValue, string $key): void
+    {
+        $this->data[$key] = $newValue;
+
+        $this->saveData($this->data);
+    }
+
+    public function saveData(array $data): void
+    {
+        file_put_contents($this->filePath, json_encode($data));
     }
 }
