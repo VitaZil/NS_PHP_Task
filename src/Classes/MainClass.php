@@ -4,14 +4,13 @@ namespace Vitab\NsTask\Classes;
 
 class MainClass
 {
-    private $data = [];
+    private array $data = [];
     private string $filePath;
 
-    public function __construct(){
-
+    public function __construct()
+    {
         $this->filePath = (__DIR__ . '/../database/data.json');
         $this->data = $this->getData();
-
     }
 
     public function main(): void
