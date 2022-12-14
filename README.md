@@ -3,6 +3,7 @@
 ## Description 
 
 You have an incomplete program for a tax calculator. The specs of the program are as the following: 
+
 ● Display a menu with the following options: 
 ```sh
   ○ 1- Input your yearly income (salary based) 
