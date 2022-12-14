@@ -12,11 +12,11 @@ You have an incomplete program for a tax calculator. The specs of the program ar
   ```
 ● The program should allow the user to re-enter values as many times as the user likes (for example if he enters a wrong value). 
 ● To calculate the tax: 
-○ First: calculate the total income that is subjected to tax:
+  ○ First: calculate the total income that is subjected to tax:
 ```sh
 total_income = salary + additional_income - tax_exemption
 ```
-○ Second: calculate the tax:
+  ○ Second: calculate the tax:
 ```sh
 tax = total_income * 0.20 if the total_income < 30000
 tax = total_income * 0.25 if the total_income >= 30000
