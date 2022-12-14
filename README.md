@@ -1,4 +1,4 @@
-# PHP Task
+# PHP Tax calculator
 
 ## Description 
 
