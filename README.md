@@ -1,4 +1,4 @@
-# PHP Tax calculator
+# Tax calculator
 
 ## Description 
 
