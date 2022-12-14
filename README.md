@@ -1,6 +1,7 @@
 # PHP Task
 
 ## Description 
+
 You have an incomplete program for a tax calculator. The specs of the program are as the following: 
 ● Display a menu with the following options: 
 ```sh
@@ -12,6 +13,7 @@ You have an incomplete program for a tax calculator. The specs of the program ar
   ```
 ● The program should allow the user to re-enter values as many times as the user likes (for example if he enters a wrong value). 
 ● To calculate the tax: 
+  
   ○ First: calculate the total income that is subjected to tax:
 ```sh
 total_income = salary + additional_income - tax_exemption
@@ -25,6 +27,7 @@ tax = total_income * 0.25 if the total_income >= 30000
 ● The menu above should be displayed after each operation until the user quits 
 
 ## Deliverables 
+
 ● To simplify the task, you are provided with the needed classes (InputHandler, OutputHandler, TaxCalculator, and MainClass).
 
 
