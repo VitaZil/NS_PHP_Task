@@ -1,4 +1,4 @@
-# Tax calculator Task
+# Tax Calculator Task
 
 ## Task Description 
 
