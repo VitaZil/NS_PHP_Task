@@ -31,6 +31,6 @@ tax = total_income * 0.25 if the total_income >= 30000
 
 ## Deliverables 
 
-● To simplify the task, you are provided with the needed classes (InputHandler, OutputHandler, TaxCalculator, and MainClass).
+● Needed classes - InputHandler, OutputHandler, TaxCalculator, and MainClass.
 
 
