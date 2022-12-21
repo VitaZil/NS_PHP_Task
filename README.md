@@ -1,6 +1,6 @@
-# Tax calculator
+# Tax calculator Task
 
-## Description 
+## Task Description 
 
 You have an incomplete program for a tax calculator. The specs of the program are as the following: 
 
